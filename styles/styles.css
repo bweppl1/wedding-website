@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Corinthia:wght@400;700&family=Meow+Script&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Palette */
+
+:root {
+  --dusty-blue: #6d98ba;
+  --very-light-beige: #faf8f4;
+  --light-beige: #f7f3ed;
+  --dark-beige: #8b7355;
+  --dark-brown: #5c4033;
+  --medium-beige: #d4c4a8;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--light-beige);
+  color: var(--dark-beige);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, strong {
+  color: var(--dark-brown);
+}
+
+h5 {
+  font-weight: 700;
+  font-style: italic;
+  margin-left: 10px;
+  line-height: 0.8;
+  margin-bottom: 10px;
+}
+
+div.section-header h2 {
+  font-family: "Caveat", cursive;
+ font-size: 2.5rem;
+}
+
+a {
+  color: var(--dark-brown);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dusty-blue);
+  text-decoration: underline;
+}
+
+/* Header and Navigation */
+html {
+  scroll-padding-top: 80px; /* spacing for nav jump targets */
+}
+
+header {
+  background-color: var(--light-beige);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-family: "Corinthia", sans-serif;
+  display: flex;
+  font-size: 1.5rem;
+  color: var(--dark-brown);
+  width: max-content;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+
+.logo span {
+  color: var(--dusty-blue);
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--dark-brown);
+}
+
+.nav-menu {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: var(--light-beige);
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+.nav-menu a {
+  color: var(--dark-brown);
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: var(--dusty-blue);
+  text-decoration: underline;
+}
+
+/* Main content */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("assets/images/placeholder.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--light-beige);
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+div.countdown {
+  display: flex;
+}
+
+div.countdown-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+div.countdown span {
+  font-size: 0.8rem;
+  color: var(--dark-brown);
+}
+
+
+div.countdown-number {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark-brown);
+  border: 0;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  background-color: var(--medium-beige);
+}
+
+.btn {
+  background-color: var(--dusty-blue);
+  color: var(--light-beige);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  font-weight: 600;
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--dark-brown);
+}
+
+section p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.2;
+}
+
+div.itinerary-item ul {
+  margin-bottom: 10px;
+}
+
+div.itinerary-item a {
+  font-weight: 600;
+}
+
+.highlight {
+  color: var(--dusty-blue);
+}
+
+div.section-header h2{
+  display: inline-block;
+  position: relative;
+}
+
+div.section-header h2:after {
+  content: "";
+  background: var(--dusty-blue);
+  height: 2px;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Wedding Details */
+.map {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px 0 10px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .map {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+div.itinerary-item {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px;
+}
+
+div.activities-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+div.activities-item {
+  background-color: var(--very-light-beige);
+  border-radius: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Wedding Party */
+.wedding-party-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+@media (min-width: 768px) {
+  .wedding-party-grid {
+    flex-direction: row;
+  }
+}
+
+.wedding-party-card {
+  background-color: var(--very-light-beige);
+  border: 0;
+  border-radius: 10px 0 10px 0;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wedding-party-image {
+  border: 0;
+  border-radius: 10px 0 10px 0;
+  width: 200px;
+  height: 250px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dusty-blue);
+  color: var(--light-beige);
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Desktop */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .nav-menu a {
+    margin-left: 20px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  div.activities-container {
+    flex-direction: row;
+  }
+
+  div.activities-item {
+    padding: 20px 30px;
+    margin: 0 20px
+  }
+}
+
+
+/* Fade Effect */
+.fade-in-item {
+  opacity: 0; 
+  transform: translateY(20px); /* Slide in -- X -> horizontal, Y -> vertical */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* transition duration */
+}
+
+.fade-in-item.is-visible {
+  opacity: 1; 
+  transform: translateY(0); /* Return to original position */
+}
