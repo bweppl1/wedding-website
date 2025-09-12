@@ -211,8 +211,13 @@ section p {
   line-height: 1.2;
 }
 
-div.itinerary-item ul {
-  margin-bottom: 10px;
+/* Itinerary */
+
+div.itinerary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 div.itinerary-item a {
@@ -246,22 +251,59 @@ div.section-header h2:after {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 768px) {
-  .map {
-    width: 400px;
-    height: 300px;
-  }
+div.wedding-details-item {
+  text-align: left;
 }
 
-div.itinerary-item {
-  max-width: 600px;
+div.wedding-details-item ul {
+  list-style: none;
+}
+
+/* Wedding Party */
+.wedding-party-grid {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  margin: 0 auto;
-  text-align: left;
-  padding: 20px;
+  justify-content: center;
+  gap: 25px;
 }
+
+.wedding-party-card {
+  background-color: var(--very-light-beige);
+  border: 0;
+  border-radius: 10px 0 10px 0;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+div.wedding-party-card h3 {
+  font-size: 1.9rem;
+  font-family: "Corinthia", sans-serif;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+div.wedding-party-card h3:after {
+  content: "";
+  background: var(--medium-beige);
+  height: 2px;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+div.wedding-party-card span {
+  color: var(--dusty-blue);
+}
+
+.wedding-party-image {
+  border: 0;
+  border-radius: 10px 0 10px 0;
+  width: 85%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Activities */
 
 div.activities-container {
   display: flex;
@@ -270,7 +312,8 @@ div.activities-container {
   margin: 0 auto;
 }
 
-div.activities-item {
+/* Reused Container Item */
+div.container-item {
   background-color: var(--very-light-beige);
   border-radius: 10px 0 10px 0;
   display: flex;
@@ -282,34 +325,18 @@ div.activities-item {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Wedding Party */
-.wedding-party-grid {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 25px;
+div.container-item ul {
+  list-style: none;
 }
 
-@media (min-width: 768px) {
-  .wedding-party-grid {
-    flex-direction: row;
-  }
+
+div.container-item ul li:before {
+  content: "♥  ";
+  color: var(--medium-beige);
+  vertical-align: middle;
+  font-size: 0.8em;
 }
 
-.wedding-party-card {
-  background-color: var(--very-light-beige);
-  border: 0;
-  border-radius: 10px 0 10px 0;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.wedding-party-image {
-  border: 0;
-  border-radius: 10px 0 10px 0;
-  width: 200px;
-  height: 250px;
-}
 
 /* Footer */
 footer {
@@ -352,6 +379,30 @@ footer {
     padding: 60px 20px;
   }
 
+  .map {
+    width: 400px;
+    height: 300px;
+  }
+
+  div.itinerary-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  div.container-item {
+    width: 35%;
+  }
+
+  .wedding-party-grid {
+    flex-direction: row;
+  }
+  .wedding-party-image {
+    border: 0;
+    border-radius: 10px 0 10px 0;
+    width: 300px;
+    height: auto;
+  }
+
   div.activities-container {
     flex-direction: row;
   }
@@ -359,6 +410,22 @@ footer {
   div.activities-item {
     padding: 20px 30px;
     margin: 0 20px
+  }
+
+  div.wedding-details-container {
+    display: flex;
+    margin: 0 auto;
+    width: auto;
+    justify-content: center;
+  }
+
+  div.wedding-details-item {
+    margin: 0 20px;
+  }
+  
+  div.wedding-details-item iframe {
+    width: 400px;
+    height: 300px;
   }
 }
 
