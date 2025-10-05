@@ -307,8 +307,8 @@ div.wedding-party-card span {
 .wedding-party-image {
   border: 0;
   border-radius: 10px 0 10px 0;
-  width: 85%;
-  height: auto;
+  width: 95%;
+  height: 200px;
   object-fit: cover;
 }
 
