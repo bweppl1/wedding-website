@@ -148,20 +148,112 @@ header {
   color: var(--light-beige);
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
 }
 
-.hero p {
-  font-size: 1.2rem;
+.married {
+  font-family: "Corinthia", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--light-beige);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
+  animation: fadeInUp 1.2s ease-out 0.2s both;
+}
+
+.highlight-small {
+  color: var(--light-beige);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.4s ease-out 0.4s both;
+  margin: 10px 0;
+  display: block;
+}
+
+.hero p.highlight {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dusty-blue);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.6s ease-out 0.6s both;
+  margin-top: 20px;
+}
+
+/* Decorative elements */
+.hero::after {
+  /* content: '❦'; */
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-size: 2rem;
+  color: var(--dusty-blue);
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+.hero .decorative-heart {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  font-size: 1.5rem;
+  color: var(--dusty-blue);
+  opacity: 0.5;
+  animation: float 2.5s ease-in-out infinite reverse;
+  z-index: 1;
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 div.countdown {
   display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  animation: fadeInUp 1.8s ease-out 0.8s both;
 }
 
 div.countdown-item {
@@ -169,23 +261,40 @@ div.countdown-item {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+div.countdown-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 div.countdown span {
-  font-size: 0.8rem;
-  color: var(--dark-brown);
+  font-size: 0.9rem;
+  color: var(--light-beige);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-
 div.countdown-number {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--dark-brown);
-  border: 0;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 5px;
-  background-color: var(--medium-beige);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--light-beige);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  line-height: 1;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .btn {
@@ -232,7 +341,7 @@ div.itinerary-item a {
   font-weight: 600;
 }
 
-.highlight {
+.highlight .highlight-small {
   color: var(--light-beige);
 }
 
@@ -266,6 +375,12 @@ div.wedding-details-item {
 
 div.wedding-details-item ul {
   list-style: none;
+}
+
+.cabin-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 0 10px 0;
 }
 
 /* Wedding Party */
@@ -308,7 +423,7 @@ div.wedding-party-card span {
   border: 0;
   border-radius: 10px 0 10px 0;
   width: 95%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
 }
 
@@ -382,6 +497,39 @@ footer {
 
   .hero p {
     font-size: 1.5rem;
+  }
+
+  .married {
+    font-size: 5rem;
+  }
+
+  .hero .highlight {
+    font-size: 1.6rem;
+  }
+
+  .hero .highlight-small {
+    font-size: 1.3rem;
+  }
+
+  .hero p.highlight {
+    font-size: 1.8rem;
+  }
+
+  div.countdown {
+    gap: 20px;
+  }
+
+  div.countdown-item {
+    min-width: 100px;
+    padding: 25px 20px;
+  }
+
+  div.countdown-number {
+    font-size: 2.5rem;
+  }
+
+  div.countdown span {
+    font-size: 1rem;
   }
 
   section {
@@ -573,6 +721,54 @@ footer {
   
   .next-btn {
     margin-left: 10px;
+  }
+
+  /* Hero mobile styles */
+  .married {
+    font-size: 3rem;
+  }
+
+  .hero .highlight {
+    font-size: 1.2rem;
+  }
+
+  .hero .highlight-small {
+    font-size: 1rem;
+  }
+
+  .hero p.highlight {
+    font-size: 1.4rem;
+  }
+
+  div.countdown {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  div.countdown-item {
+    min-width: 70px;
+    padding: 15px 10px;
+  }
+
+  div.countdown-number {
+    font-size: 1.8rem;
+  }
+
+  div.countdown span {
+    font-size: 0.8rem;
+  }
+
+  .hero::after {
+    font-size: 1.5rem;
+    top: 15%;
+    left: 5%;
+  }
+
+  .hero .decorative-heart {
+    font-size: 1.2rem;
+    top: 10%;
+    right: 10%;
   }
 }
 
